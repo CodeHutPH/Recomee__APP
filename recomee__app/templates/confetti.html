@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'confetti.css' %}" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/gifler@1.2.1/dist/gifler.min.js"></script>
+  </head>
+  <script>
+    const confettiImg = document.getElementById("confetti-img");
+    const gifler = new Gifler(confettiImg);
+    gifler.setSpeed(2); // adjust the speed value
+  </script>
+  <script>
+    function removeConfetti() {
+      // Get the preloader element
+      var confetti = document.querySelector(".confetti");
+      // Check if preloader exists
+      if (confetti) {
+        // Remove the preloader from the DOM
+        confetti.parentNode.removeChild(confetti);
+      }
+    }
+
+    // Event listener for when the document is fully loaded
+    document.addEventListener("DOMContentLoaded", function () {
+      // Call the removePreloader function after a short delay
+      setTimeout(removeConfetti, 5800); // Change the delay time as needed
+    });
+  </script>
+  <body>
+    <div class="confetti">
+      <img src="{% static 'assets/confetti.gif' %}" alt="" id="confetti-img" />
+    </div>
+  </body>
+</html>

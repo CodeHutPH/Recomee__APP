@@ -1,0 +1,36 @@
+/*global font*/
+
+
+
+h1, h2, h4 {
+    font-family:"Poppins", sans-serif;
+}
+
+h2 {
+    margin-top: 0;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 3em;
+}
+h4 {
+    font-size: 18px;
+    font-weight: 700;
+    font-style: normal;
+}
+p {
+    font-size: 16px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-style: normal; 
+    letter-spacing: 0.5px;
+    line-height: 25px;
+}
+
+a {
+    text-decoration: none;
+}
+
+section {
+    padding: 4em 3em;
+}
+

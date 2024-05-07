@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=h, initial-scale=1.0" />
+    <title>Document</title>
+    {% load static %}
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'no_results_page.css' %}" />
+  </head>
+  <body>
+    <header id="nav-header">
+      <a href= "{% url 'get_started' %}">
+          <img src="{% static 'assets/whitelogo.png' %}" alt="logo">
+      </a>
+      <nav id="nav-links">
+        <form method = 'post' action= "{% url 'get_started' %}" name="get_started_form">
+          {% csrf_token %}
+          <button id="call-to-action" title="Go back to previous page" type="submit">Back</a>
+      </nav>
+  </header>
+    <section class="section-one">
+      <div class="center-container">
+        <div class="text-container" >
+          <p>
+            <span style="font-size: 28px; font-weight: 500"
+              >Apologies but we couldn't find </span
+            ><br />
+            <span style="font-size: 28px; font-weight: 500">
+              any related career based on your input. </span
+            ><br> <br>
+            <span
+              style="
+                color: #0aa085;
+                font-size: 15px;
+                cursor: pointer;
+              "><a class="try-dif-terms" id="search_again">Kindly try different search terms.</a></span>
+            </p>
+        </div>
+        <div>
+          <img src="{% static 'assets/jobless.gif' %}" alt="" style="margin: 0;">
+        </div>
+      </div>
+    </section>
+  </body>
+  <script>
+    document.getElementById("search_again").addEventListener("click", function () {
+      window.history.back();
+    });
+  </script>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {% load static %}
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'preloader.css' %}" />
+  </head>
+  <script>
+    // JavaScript function to remove preloader
+    function removePreloader() {
+      // Get the preloader element
+      var preloader = document.querySelector(".pre-loader");
+      // Check if preloader exists
+      if (preloader) {
+        // Remove the preloader from the DOM
+        preloader.parentNode.removeChild(preloader);
+      }
+    }
+
+    // Event listener for when the document is fully loaded
+    document.addEventListener("DOMContentLoaded", function () {
+      // Call the removePreloader function after a short delay
+      setTimeout(removePreloader, 4500); // Change the delay time as needed
+    });
+  </script>
+  <body>
+    <div class="pre-loader">
+      <div>
+        <img
+          src="{% static 'assets/[150px] Loader.gif' %}"
+          alt=""
+          id="loader"
+        />
+      </div>
+    </div>
+  </body>
+</html>

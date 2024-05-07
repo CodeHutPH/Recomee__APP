@@ -1,0 +1,203 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'get_started.css' %}">
+    <link rel="stylesheet" href="{% static 'global_styling.css' %}">
+    <title>Get Started</title>
+</head>
+{% include 'preloader.html' %}
+<body>
+    
+    <header id="nav-header">
+        <a href="{% url 'get_started' %}">
+            <img src="static/assets/logo.png" alt="logo">
+        </a>
+        <nav id="nav-links">
+            <a href="#section-two" title="see how the app works">How it Works</a>
+            <a href="#section-three" title="what are the benefits">Benefits</a>
+            <a href="#section-four-main-container">Explore Careers</a>
+            <button id="call-to-action" title="Click Here to get started!">Get Started</a>
+        </nav>
+    </header>
+    <!--this is the first page that the user will see-->
+    <section id="section-one">
+        <h2><span class="change-color">Discover✨</span> Your Dream Career Path: <br>
+        Personalized Recommendations <br><span class="change-color">Powered by AI🤖</span></h2>
+        <p>Unsure about what career to pursue? Let our machine learning algorithm analyze your skills, interests, and <br>
+            preferred industry to suggest perfect matches    </p>
+        <form action="#section-two">
+            <button type="submit">How it Works?</button>
+        </form>
+    </section>
+
+    <!--this section talks about how the app works-->
+    <section id="section-two">
+        <h2>How it works?</h2>
+        <div id="section-two-description-main-container">
+            <div>
+                <h4>Course, Skills, and Industry Match</h4>
+                <p>Take a quick and engaging assessment that <br>
+                   analyzes your course, skills, interests and your <br>
+                   preferred industry.</p>
+            </div>
+            <div>
+                <h4>Our AI algorithm finds your
+                    perfect recommended career path.</h4>
+                <p>Our advanced Multinomial Naive Bayes algorithm <br>
+                   processes your data and matches you with <br>
+                   suitable career paths.</p>
+            </div>
+        </div>
+    </section>
+    <!--This section talks about the benefits of the app-->
+    <section id="section-three">
+        <h2>Highlighting Specific Benefits</h2>
+        <div class="content-container">
+            <div>
+                <h4>🟩Instant Clarity</h4>
+                <p>Gain valuable insights into your strengths 
+                   and potential, helping you make informed 
+                   career decisions.</p>
+            </div>
+            <div>
+                <h4>🟩Personalized Guidance</h4>
+                <p>Discover hidden career gems that align 
+                   perfectly with your unique qualities, beyond 
+                   traditional options.</p>
+            </div>
+            <div>
+                <h4>🟩Increased Decision-Making Efficiency</h4>
+                <p>Feeling overwhelmed by career choices? A recommender system 
+                    can streamline the process, presenting a manageable list of 
+                    options that align with your input.</p>
+            </div>
+        </div>
+        
+    </section>
+
+    <!--this section will display potential careers that the app may offer-->
+    <section id="section-four-main-container">
+        <h2>Explore Potential Careers</h2>
+        <!--First career-->
+        <div class="careers-main-container">
+            <div class="careers-and-description-container">
+                <div class="careers-img-container">
+                    <img src="{% static 'assets/software-engr-svg.svg' %}" alt="">
+                </div>
+                <div class="title-and-description-of-career">
+                    <h4>Software Engineer</h4>
+                    <p>Designs, develops, and test software <br>
+                       applications and computer systems.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!--Second career-->
+        <div class="careers-main-container">
+            <div class="careers-and-description-container">
+                <div class="title-and-description-of-career-right-side" >
+                    <h4>Civil Engineer</h4>
+                    <p>Responsible for designing, constructing, maintaining,
+                        and managing infrastructure projects such as roads, 
+                        bridges, dams, airports, and buildings. </p>
+                </div>
+                <div class="careers-img-container-right-side">
+                    <img src="static/assets/engr.svg" alt="">
+                </div>
+            </div>
+        </div>
+        
+        <!--Third Career-->
+        <div class="careers-main-container">
+            <div class="careers-and-description-container">
+                <div class="careers-img-container">
+                    <img src="static/assets/nurse.svg" alt="">
+                </div>
+                <div class="title-and-description-of-career">
+                    <h4>Nurse</h4>
+                    <p>Provide healthcare services to patients 
+                        in various settings, including hospitals, 
+                        clinics, and homes. </p>
+                </div>
+            </div>
+        </div>
+        
+        <!--Fourth career-->
+        <div class="careers-main-container">
+            <div class="careers-and-description-container">
+                <div class="title-and-description-of-career-right-side" >
+                    <h4>Financial Manager</h4>
+                    <p>Responsible for overseeing the financial 
+                        health of an organization.</p>
+                </div>
+                <div class="careers-img-container-right-side">
+                    <img src="static/assets/finance.svg" alt="">
+                </div>
+            </div>
+        </div>
+
+        <!--Fifth Career-->
+        <div class="careers-main-container">
+            <div class="careers-and-description-container">
+                <div class="careers-img-container">
+                    <img src="static/assets/electrician.svg" alt="">
+                </div>
+                <div class="title-and-description-of-career">
+                    <h4>Electrician</h4>
+                    <p>Skilled tradespeople who install, maintain, 
+                        and repair electrical systems in residential, 
+                        commercial, and industrial settings. </p>
+                </div>
+            </div>
+        </div>
+        
+        <!--Sixth career-->
+        <div class="careers-main-container">
+            <div class="careers-and-description-container">
+                <div class="title-and-description-of-career-right-side" >
+                    <h4>Sales Representative</h4>
+                    <p>They act as the  face of the company, promoting and selling the company's products or services.</p>
+                </div>
+                <div class="careers-img-container-right-side">
+                    <img src="static/assets/sales svg.svg" alt="">
+                </div>
+            </div>
+        </div>
+
+        <!--Seventh Career-->
+        <div class="careers-main-container">
+            <div class="careers-and-description-container" >
+                <div class="careers-img-container">
+                    <img src="static/assets/educator svgs.svg" alt="">
+                </div>
+                <div class="title-and-description-of-career">
+                    <h4>Educator</h4>
+                    <p>They act as mentors and guides, shaping the individuals who will shape future generations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="section-five-get-started-page">
+        <h2>Get started</h2>
+        <form method = "post" action = "{% url 'get_started' %}" name="get_started_form">
+            {% csrf_token %}
+            <input type="text" name="username" id="get-started-page-input-name" placeholder="Your name" required>
+            <button type="submit">Enter</button>
+        </form>
+    </section>
+</body>
+
+<script>
+    document.getElementById('call-to-action').addEventListener('click', function() {
+        document.querySelector('#section-five-get-started-page').scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+</script>
+
+</html>

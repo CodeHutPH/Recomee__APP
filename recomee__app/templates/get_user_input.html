@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Get User Input</title>
+    <link rel="stylesheet" href="static/get_user_input.css" />
+    {% load static %}
+    <script src="{% static 'script.js' %}"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{% static 'get_user_input.css' %}" />
+  </head>
+  <body>
+    <form method="post" action="{% url 'predict_position' %}">
+      {% csrf_token %}
+      <section id="section-one">
+        <!--section for course input-->
+        <label for="">Course</label><br />
+        <select name="course" id="courses" required>
+          <option value="" selected disabled>Choose an option</option>
+          <option value="Accountancy">Accountancy</option>
+          <option value="Accounting Technology">Accounting Technology</option>
+          <option value="Biology">Biology</option>
+          <option value="Business Administration">
+            Business Administration
+          </option>
+          <option value="Civil Engineering">Civil Engineer</option>
+          <option value="Computer Engineering">Computer Engineering</option>
+          <option value="Computer Science" name="course">
+            Computer Science
+          </option>
+          <option value="Electrical Engineering">Electrical Engineering</option>
+          <option value="Elementary Education">Elementary Education</option>
+          <option value="Hospitality Management">Hospitality Management</option>
+          <option value="Industrial Technology">Industrial Technology</option>
+          <option value="Information Technology">Information Technology</option>
+          <option value="Mechanical Engineering">Mechanical Engineering</option>
+          <option value="Nursing">Nursing</option>
+          <option value="Psychology">Psychology</option>
+          <option value="Secondary Education- English">
+            Secondary Education-English
+          </option>
+          <option value="Secondary Education- Filipino">
+            Secondary Education- Filipino
+          </option>
+          <option value="Secondary Education- Physical Education">
+            Secondary Education- Physical Education
+          </option>
+          <option value="Technical Vocational Teacher Education">
+            Technical Vocational Teacher Education
+          </option>
+          <option value="Tourism Management">Tourism Management</option>
+        </select>
+        <h6 class="guides" style="color: rgb(31, 31, 31)">
+          Specify the course or program you have completed <br />
+          or are currently pursuing.
+        </h6>
+
+        <div class="custom-alert" id="course_alert">
+          Please select a course.
+        </div>
+        <br />
+        <a onclick="validate_input_courses()">Next</a>
+      </section>
+
+      <section id="section-two">
+        <!--section for skills input-->
+        <label for="skills">Primary Skills</label>
+        <input
+          type="text"
+          required
+          name="skills"
+          id="skills"
+          placeholder="e.g. Mobile Development, Cash Management"
+        />
+        <h6 class="guides" style="color: rgb(255, 255, 255)">
+          Identify your primary abilities or core skills you have and
+          <br />would like to use in your career.
+        </h6>
+        <div class="custom-alert" id="skill_alert">Please type your skill.</div>
+        <br />
+        <a onclick="validate_input_skills()">Next</a>
+      </section>
+
+      <section id="section-three">
+        <!--section for interests-->
+        <label for="interest">Main Interests</label><br />
+        <input
+          type="text"
+          required
+          id="interests"
+          name="interest"
+          placeholder="e.g. Web Development, Culinary Arts"
+        />
+        <h6 class="guides" style="color: rgb(0, 0, 0)">
+          Identify your main interests or ideal passions you <br />certainly
+          want in your career.
+        </h6>
+        <div class="custom-alert" id="interest_alert">
+          Please type your interests.
+        </div>
+        <br />
+        <a onclick="validate_input_interests()">Next</a>
+      </section>
+
+      <!--section for industry-->
+      <section id="section-four">
+        <!--section for preffered industry-->
+        <label for="industry">Preferred Industry</label><br />
+        <input
+          type="text"
+          required
+          name="industry"
+          placeholder="e.g. Technological Industry, Education, Psychology"
+        />
+        <h6 class="guides" style="color: rgb(255, 255, 255)">
+          Specify your preferred industry or sector <br />
+          you envision yourself working in.
+        </h6>
+        <div class="custom-alert" id="industry_alert">
+          Please type your preferred industry.
+        </div>
+        <br />
+        <button type="submit" id="submit_button">EXPLORE✨</button>
+      </section>
+    </form>
+    <div id="back_to_top">
+      <a href="#section-one" id="back_to_top_link">Back to top👆</a>
+    </div>
+  </body>
+
+  <!-- <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // Add event listener to the entire document
+      document.addEventListener("keydown", function (event) {
+        // Check if the pressed key is the Enter key
+        if (event.key === "Enter") {
+          // Prevent the default action of the Enter key
+          event.preventDefault();
+        }
+      });
+    });
+  </script> -->
+  <!-- <script>
+    function showSubDropdown() {
+      var mainDropdown = document.getElementById("main-dropdown");
+      var accountancyDropdown = document.getElementById("accountancy");
+      var accountingTechnology = document.getElementById(
+        "accountingTechnology"
+      );
+      if (mainDropdown.value === "Accountancy") {
+        accountancyDropdown.style.display = "block";
+      } else if (mainDropdown.value === "Accounting Technology") {
+        accountingTechnology.style.display = "block";
+      } else if (mainDropdown.value === "Civil Engineering") {
+        subDropdownContainer.style.display = "block";
+      } else if (mainDropdown.value === "Computer Engineering") {
+        subDropdownContainer.style.display = "block";
+      } else if (mainDropdown.value === "Computer Science") {
+        subDropdownContainer.style.display = "block";
+      } else if (mainDropdown.value === "Electrical Engineering") {
+        subDropdownContainer.style.display = "block";
+      } else if (mainDropdown.value === "Mechanical Engineering") {
+        subDropdownContainer.style.display = "block";
+      } else if (mainDropdown.value === "Nursing") {
+        subDropdownContainer.style.display = "block";
+      } else if (mainDropdown.value === "Psychology") {
+        subDropdownContainer.style.display = "block";
+      } else if (mainDropdown.value === "Tourism Management") {
+        subDropdownContainer.style.display = "block";
+      } else {
+        subDropdownContainer.style.display = "none";
+      }
+    }
+  </script> -->
+</html>
