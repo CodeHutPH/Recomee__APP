@@ -6,15 +6,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'get_started.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'global_styling.css' %}">
     <title>Get Started</title>
 </head>
-{% include 'preloader.html' %}
+<!-- {% include 'preloader.html' %} -->
 <body>
-    
-    <header id="nav-header">
+    <header id="nav-header" class="container">
         <a href="{% url 'get_started' %}">
-            <img src="static/assets/logo.png" alt="logo">
+            <img src="static/assets/Nav-logo.png" alt="logo">
         </a>
         <nav id="nav-links">
             <a href="#section-two" title="see how the app works">How it Works</a>
@@ -24,7 +24,24 @@
         </nav>
     </header>
     <!--this is the first page that the user will see-->
-    <section id="section-one">
+
+    <section class="container h-75"  id="section-one">
+        <div class="row">
+            <div class="col-xl-9 col-lg-10 col-md-12 col-sm-10 col-12" >
+                <h2>
+                    <span class="change-color">Discover✨</span> Your Dream Career Path: Personalized Recommendations <br> <span class="change-color">Powered by AI🤖</span>
+                </h2>
+                <p>Unsure about what career to pursue? Let our machine learning algorithm analyze your skills,<br> 
+                    interests, and preferred industry to suggest perfect matches </p>
+                <form action="#section-two"><button type="submit">How it Works?</button></form>
+            </div>
+            <div class="col-xl-2 justify-content-center ">
+                <img src="{% static 'assets/hero-section.svg' %}" alt="">
+            </div>
+        </div>
+
+    </section>
+    <!-- <section id="section-one">
         <h2><span class="change-color">Discover✨</span> Your Dream Career Path: <br>
         Personalized Recommendations <br><span class="change-color">Powered by AI🤖</span></h2>
         <p>Unsure about what career to pursue? Let our machine learning algorithm analyze your skills, interests, and <br>
@@ -32,44 +49,44 @@
         <form action="#section-two">
             <button type="submit">How it Works?</button>
         </form>
-    </section>
+    </section> -->
 
     <!--this section talks about how the app works-->
-    <section id="section-two">
-        <h2>How it works?</h2>
+    <section id="section-two" class="h-75">
+        <h2>How it works?</h2><br>
         <div id="section-two-description-main-container">
             <div>
                 <h4>Course, Skills, and Industry Match</h4>
-                <p>Take a quick and engaging assessment that <br>
-                   analyzes your course, skills, interests and your <br>
-                   preferred industry.</p>
+                <p>Take a quick and engaging assessment that
+                    analyzes your course, skills, interests and your
+                    preferred industry.</p>
             </div>
             <div>
                 <h4>Our AI algorithm finds your
                     perfect recommended career path.</h4>
-                <p>Our advanced Multinomial Naive Bayes algorithm <br>
-                   processes your data and matches you with <br>
+                <p>Our advanced Multinomial Naive Bayes algorithm
+                   processes your data and matches you with
                    suitable career paths.</p>
             </div>
         </div>
     </section>
     <!--This section talks about the benefits of the app-->
-    <section id="section-three">
+    <section id="section-three" class="container">
         <h2>Highlighting Specific Benefits</h2>
-        <div class="content-container">
-            <div>
+        <div class="row">
+            <div class="col-xl-4 description-box" >
                 <h4>🟩Instant Clarity</h4>
                 <p>Gain valuable insights into your strengths 
                    and potential, helping you make informed 
                    career decisions.</p>
             </div>
-            <div>
+            <div class="col-xl-4 description-box">
                 <h4>🟩Personalized Guidance</h4>
                 <p>Discover hidden career gems that align 
                    perfectly with your unique qualities, beyond 
                    traditional options.</p>
             </div>
-            <div>
+            <div class="col-xl-4 description-box">
                 <h4>🟩Increased Decision-Making Efficiency</h4>
                 <p>Feeling overwhelmed by career choices? A recommender system 
                     can streamline the process, presenting a manageable list of 
@@ -172,7 +189,7 @@
         <div class="careers-main-container">
             <div class="careers-and-description-container" >
                 <div class="careers-img-container">
-                    <img src="static/assets/educator svgs.svg" alt="">
+                    <img src="static/assets/educator svg.svg" alt="">
                 </div>
                 <div class="title-and-description-of-career">
                     <h4>Educator</h4>
@@ -182,7 +199,7 @@
         </div>
     </section>
 
-    <section id="section-five-get-started-page">
+    <section id="section-five-get-started-page" class="h-100">
         <h2>Get started</h2>
         <form method = "post" action = "{% url 'get_started' %}" name="get_started_form">
             {% csrf_token %}

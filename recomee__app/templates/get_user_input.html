@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="{% static 'get_user_input.css' %}" />
   </head>
   <body>
-    <form method="post" action="{% url 'predict_position' %}">
+    <form method="post" action="{% url 'career_results' %}">
       {% csrf_token %}
       <section id="section-one">
         <!--section for course input-->
@@ -123,6 +123,7 @@
         </h6>
         <div class="custom-alert" id="industry_alert">
           Please type your preferred industry.
+          
         </div>
         <br />
         <button type="submit" id="submit_button">EXPLORE✨</button>

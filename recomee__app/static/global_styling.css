@@ -8,9 +8,10 @@ h1, h2, h4 {
 
 h2 {
     margin-top: 0;
-    font-weight: 800;
+    font-weight: 600;
     font-style: normal;
-    font-size: 3em;
+    font-size: 42px;
+    color: #333c4d;
 }
 h4 {
     font-size: 18px;
@@ -19,7 +20,7 @@ h4 {
 }
 p {
     font-size: 16px;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-weight: 400;
     font-style: normal; 
     letter-spacing: 0.5px;

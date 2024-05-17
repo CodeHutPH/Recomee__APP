@@ -1,16 +1,13 @@
 from django.shortcuts import render
-from django.shortcuts import render, redirect
-from django.http import HttpResponse
 from joblib import load
-from sklearn.feature_extraction.text import CountVectorizer
-from sklearn.naive_bayes import MultinomialNB
+# from .models import InputResults
 
-# Create your views here.
 
 def get_started(request):
     if request.method == 'POST':
-        return render (request, 'get_user_input.html')
-    return render (request, 'get_started.html')
+        username = request.POST.get('username')
+        return render(request, 'get_user_input.html')
+    return render(request, 'get_started.html')
 
 
 def career_results(request):
@@ -24,8 +21,8 @@ def career_results(request):
         user_input_combined = ' '.join([user_course, user_skills, user_interest, user_industry])
 
         # Load the model and vectorizer
-        vectorizer = load('thesisapp/models/ml_vectorizer.joblib')
-        nb_model = load('thesisapp/models/ml_model.joblib')
+        vectorizer = load('recomee__app/models/ml_vectorizer.joblib')
+        nb_model = load('recomee__app/models/ml_model.joblib')
 
         # Transform user input into numerical format
         user_input_vec = vectorizer.transform([user_input_combined])
@@ -45,7 +42,20 @@ def career_results(request):
         top_two = {'second_career' : top_three_predictions[1].upper(), 'second_probability' : '{:.2f}'.format(top_three_probabilities[1] * 100)}
         top_three = {'third_career' : top_three_predictions[2].upper(), 'third_probability' : '{:.2f}'.format(top_three_probabilities[2] * 100)}
         # top_four = {'fourth_career' : top_three_predictions[3].upper(), 'fourth_probability' : '{:.2f}'.format(top_three_probabilities[3] * 100)}
-
+        # username = request.session.get('username')
+        prediction_result = InputResults(
+            user_course=user_course,
+            user_industry=user_industry,
+            user_skills=user_skills,
+            user_interest =user_interest,
+            career_one=top_three_predictions[0],
+            career_two=top_three_predictions[1],
+            career_three=top_three_predictions[2],
+            career_one_prob=top_three_probabilities[0],
+            career_two_prob=top_three_probabilities[1],
+            career_three_prob=top_three_probabilities[2])
+            
+        prediction_result.save()
     
         if top_three_probabilities[0] < 0.03:
             return render(request, 'no_results.html')
@@ -58,3 +68,13 @@ def career_results(request):
         'top_three_probabilities': top_three_probabilities, 
         })
     return render(request, 'get_user_input.html')
+
+
+def test(request):
+    return render(request, "index.html")
+
+
+def display_data(request):
+
+    prediction_result = InputResults.objects.all()
+    return render(request, 'history_page.html', {'prediction_result': prediction_result})

@@ -7,25 +7,30 @@
 html {
   scroll-behavior: smooth;
 }
+
 html::-webkit-scrollbar {
   display: none;
 }
+
 body {
   background-color: white;
-  margin: 0%;
+  margin-top: 0;
 }
+
 
 /* navigation bar styling */
 #nav-header {
+  margin-bottom:75px ;
   position: sticky;
-  top: 0;
+  top:10;
   display: flex;
   justify-content: space-between;
-  padding: 20px 60px 20px 60px;
+  padding: 10px 40px 10px 40px;
   z-index: 1000;
-  background-color: #fdfdfd;
-  max-width: 1440px;
-  border-top: 1px solid #333c4d;
+  background-color: #333c4d;
+  border-radius: 10px;
+  border: 1px solid #333c4d;
+  /* animation-styles */
   animation-name: fade-in;
   transition: 3s;
   animation: fade-in 5s ease-in;
@@ -46,7 +51,7 @@ body {
   margin: 20px;
   font-style: normal;
   font-size: 14px;
-  color: #333c4d;
+  color: white;
 }
 
 #nav-header a:hover {
@@ -84,40 +89,27 @@ body {
 /* section one styling */
 #section-one {
   color: #333c4d;
-  min-height: 75vh;
   animation: fade-in 5s ease-in-out;
 }
 
 /* section one headline */
-#section-one h2 {
-  font-weight: 800;
-  margin-top: 3rem;
-  margin-bottom: 5px;
-}
 
 .change-color {
   /* headline green color, for contrast  */
   color: #0aa085;
 }
 
-/* section one subtitle */
-#section-one p {
-  text-align: left;
-  margin: 0;
-  font-size: 18px;
-  font-weight: 400;
-}
 
 /* section one get started button */
 #section-one button {
   transition: background-color 0.3s ease, color 0.3s ease;
   background-color: white;
   backface-visibility: 20%;
-  margin-top: 25px;
   padding: 12px 68px 12px 68px;
   border-radius: 5px;
   border: 1px solid #333c4d;
-  font-family: "inter", sans-serif;
+  font-size: 16px;
+  font-family: 'Poppins', sans-serif;
   cursor: pointer;
 }
 /* section-one (hover effect for get-started btn) */
@@ -127,37 +119,31 @@ body {
   color: white;
 }
 
-/* section two styling */
-#section-two {
-  margin: 0%;
-  background-color: #f5f5f5;
-  min-height: 60vh;
-  color: #333c4d;
-}
 
-/* section two main header */
+#section-two {
+  background-color: #f5f5f5;
+}
 #section-two h2 {
   text-align: center;
 
-  /* scroll-animation */
   animation-name: fade-in;
   animation-timeline: view();
   animation-range-start: 10px;
   animation-range-end: 400px;
 }
 
-/* section two subheader */
+
 #section-two h4 {
   font-size: 18px;
   font-weight: 700;
 }
 
-/* section two text-description */
+
 #section-two p {
   font-size: 16px;
 }
 
-/* section two, this is the main container of the cards */
+
 #section-two-description-main-container {
   display: flex;
   justify-content: center;
@@ -183,8 +169,8 @@ body {
 }
 
 #section-three h2 {
-  font-size: 48px;
-  font-weight: 800;
+  font-size: 42px;
+  font-weight: 600;
   text-align: center;
 
   animation-name: fade-in;
@@ -213,16 +199,10 @@ body {
   animation-range-end: 400px;
 }
 
-.content-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.description-box {
+  padding: 12px;
 }
 
-.content-container div {
-  padding: 25px;
-  margin: 5px;
-}
 /* section 4 styling (explore potential careers)*/
 #section-four-main-container {
   background-color: #f5f5f5;
@@ -232,7 +212,6 @@ body {
 }
 
 #section-four-main-container h2 {
-  font-size: 48px;
   text-align: center;
 
   animation-name: fade-in;

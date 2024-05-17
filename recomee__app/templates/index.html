@@ -1,40 +1,22 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Nested Dropdown Example</title>
-  </head>
-  <body>
-    <label for="main-dropdown">Select an Option:</label>
-    <select id="main-dropdown" onchange="showSubDropdown()">
-      <option value="">Select Option</option>
-      <option value="option1">Option 1</option>
-      <option value="option2">Option 2 (With Sub-options)</option>
-      <option value="option3">Option 3</option>
-    </select>
-
-    <div id="sub-dropdown-container" style="display: none">
-      <label for="sub-dropdown">Sub-options:</label>
-      <select id="sub-dropdown">
-        <option value="">Select Sub-option</option>
-        <option value="suboption1">Sub-option 1</option>
-        <option value="suboption2">Sub-option 2</option>
-        <option value="suboption3">Sub-option 3</option>
-      </select>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {% load static %}
+  <title>Document</title>
+  <link rel="stylesheet" href="{% static 'bootsrap.min.css' %}">
+</head>
+<body>
+  <div class="row">
+    <div class="col-12">
+        <div class="col-1">
+          <p>Hey</p>
+        </div>
+        <div class="col-11">
+          <p>Fritz</p>
+        </div>
     </div>
-
-    <script>
-      function showSubDropdown() {
-        var mainDropdown = document.getElementById("main-dropdown");
-        var subDropdownContainer = document.getElementById(
-          "sub-dropdown-container"
-        );
-
-        if (mainDropdown.value === "option2") {
-          subDropdownContainer.style.display = "block";
-        } else {
-          subDropdownContainer.style.display = "none";
-        }
-      }
-    </script>
-  </body>
+  </div>
+</body>
 </html>
