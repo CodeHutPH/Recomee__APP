@@ -44,3 +44,19 @@ h1 {
   color: #0aa085;
   border-color: #046c5a;
 }
+
+.user_pill{
+  background-color: #333c4d;
+  border-radius: 3px;
+  padding: 3px;
+  color: white;
+  font-size: 12px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 500;
+}
+
+.history-container {
+  border: 1px solid black;
+  padding: 20px;
+  margin-bottom: 20px;
+}

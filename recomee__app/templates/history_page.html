@@ -12,11 +12,25 @@
   </head>
   <body>
     <button id="back_btn" title="Go back to previous page">Back</button>
-    <section class="container">
-      <h1>Career Predictions</h1>
-      {% for user_result in prediction_result %}
-        <h4>Username : {{user_result.user_course}}</h4>
-        <h4>Username : {{user_result.career_one}}</h4>
+    <section class="container my-3">
+      <h4>History</h4>
+      {% for user_result in all_results reversed %}
+      <div class="container history-container my-4" >
+        <span class="user_pill mb-5">User: {{user_result.user_name.name}}</span>
+        <div class="row">
+          <div class="col-xl-6">
+            <p class="my-3"><strong>Course</strong> : {{user_result.user_course}}</p>
+            <p><strong>Skills</strong> : {{user_result.user_skills}}</p>
+            <p><strong>Interest</strong> : {{user_result.user_interest}}</p>
+            <p><strong>Industry</strong> : {{user_result.user_industry}}</p>
+        </div>
+        <div class="col-xl-6">
+            <p class="my-3"><strong>Career One</strong>: {{user_result.career_one}} |  <strong>{{ user_result.career_one_prob}}%</strong>
+            <p><strong>Career Two</strong> : {{user_result.career_two}} | <strong>{{user_result.career_two_prob}}%</strong>
+            <p><strong>Career Three</strong> : {{user_result.career_three}} | <strong>{{user_result.career_three_prob}}%</strong>
+        </div>
+        </div>
+      </div>
       {% endfor %}
     </section>
   </body>
