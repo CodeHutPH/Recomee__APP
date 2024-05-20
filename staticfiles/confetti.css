@@ -1,0 +1,30 @@
+body {
+  margin: 0;
+}
+
+.confetti {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1000;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#confetti-img {
+  width: 75%;
+  animation: slow-down 4s linear infinite; /* adjust the duration and animation curve */
+}
+
+@keyframes slow-down {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}

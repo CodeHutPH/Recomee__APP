@@ -1,0 +1,455 @@
+/* font styles */
+@import url("https://fonts.googleapis.com/css2?family=Azeret+Mono:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+/* This will provide smooth scrolling experience */
+html {
+  scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  background-color: white;
+  margin-top: 0;
+}
+
+
+/* navigation bar styling */
+#nav-header {
+  margin-bottom:75px ;
+  position: sticky;
+  top:10;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 40px 10px 40px;
+  z-index: 1000;
+  background-color: #333c4d;
+  border-radius: 10px;
+  border: 1px solid #333c4d;
+  /* animation-styles */
+  animation-name: fade-in;
+  transition: 3s;
+  animation: fade-in 5s ease-in;
+}
+/* navigation bar logo  */
+#nav-header img {
+  max-width: 141px;
+  max-height: 30px;
+  cursor: pointer;
+}
+
+/* navigation bar links */
+#nav-links a {
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  margin: 20px;
+  font-style: normal;
+  font-size: 14px;
+  color: white;
+}
+
+#nav-header a:hover {
+  color: #0aa085;
+}
+
+#nav-header a:active {
+  color: #046c5a;
+}
+
+#call-to-action {
+  transition: background-color 0.3s ease, color 0.3s ease;
+  background-color: white;
+  backface-visibility: 20%;
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 14px;
+  color: white;
+  padding: 5px 12px;
+  font-weight: 600;
+  border: 1px solid #0aa085;
+  border-radius: 5px;
+  background-color: #0aa085;
+  cursor: pointer;
+}
+
+#call-to-action:hover {
+  background-color: #046c5a;
+  color: white;
+  border-color: #046c5a;
+}
+/* section one styling */
+#section-one {
+  color: #333c4d;
+  animation: fade-in 5s ease-in-out;
+}
+
+/* section one headline */
+
+.change-color {
+  /* headline green color, for contrast  */
+  color: #0aa085;
+}
+
+
+/* section one get started button */
+#section-one button {
+  transition: background-color 0.3s ease, color 0.3s ease;
+  background-color: white;
+  backface-visibility: 20%;
+  padding: 12px 68px 12px 68px;
+  border-radius: 5px;
+  border: 1px solid #333c4d;
+  font-size: 16px;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+}
+/* section-one (hover effect for get-started btn) */
+#section-one button:hover {
+  background-color: #0aa085;
+  border-color: #0aa085;
+  color: white;
+}
+
+
+#section-two {
+  background-color: #f5f5f5;
+}
+#section-two h2 {
+  text-align: center;
+
+  animation-name: fade-in;
+  animation-timeline: view();
+  animation-range-start: 10px;
+  animation-range-end: 400px;
+}
+
+
+#section-two h4 {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+
+#section-two p {
+  font-size: 16px;
+}
+
+
+#section-two-description-main-container {
+  display: flex;
+  justify-content: center;
+}
+
+#section-two-description-main-container div {
+  background-color: #f5f5f5;
+  padding: 42px 52px 0px 36px;
+  max-width: 400px;
+  min-height: 223px;
+  border: 1px solid black;
+  margin: 12px;
+
+  animation-name: fade-in;
+  animation-timeline: view();
+  animation-range-start: 10px;
+  animation-range-end: 400px;
+}
+
+/* section 3 styling */
+#section-three {
+  color: #333c4d;
+}
+
+#section-three h2 {
+  font-size: 42px;
+  font-weight: 600;
+  text-align: center;
+
+  animation-name: fade-in;
+  animation-timeline: view();
+  animation-range-start: 10px;
+  animation-range-end: 400px;
+}
+
+#section-three h4 {
+  margin: 0%;
+  margin-top: 67px;
+
+  animation-name: fade-in;
+  animation-timeline: view();
+  animation-range-start: 10px;
+  animation-range-end: 400px;
+}
+
+#section-three p {
+  font-weight: 400;
+  margin-top: 5px;
+
+  animation-name: fade-in;
+  animation-timeline: view();
+  animation-range-start: 10px;
+  animation-range-end: 400px;
+}
+
+.description-box {
+  padding: 12px;
+}
+
+/* section 4 styling (explore potential careers)*/
+#section-four-main-container {
+  background-color: #f5f5f5;
+  color: #333c4d;
+  padding-top: 83px;
+  padding-bottom: 83px;
+}
+
+#section-four-main-container h2 {
+  text-align: center;
+
+  animation-name: fade-in;
+  animation-timeline: view();
+  animation-range-start: 10px;
+  animation-range-end: 400px;
+}
+
+.careers-main-container {
+  display: flex;
+  justify-content: center;
+}
+
+.careers-and-description-container {
+  display: flex;
+  flex-direction: row;
+  margin: 69px 23px 0px 0px;
+}
+
+.careers-and-description-container p {
+  margin-top: 5px;
+
+  animation-name: fade-in;
+  animation-timeline: view();
+  animation-range-start: 10px;
+  animation-range-end: 400px;
+}
+
+.careers-and-description-container h4 {
+  margin-bottom: 0;
+
+  animation-name: fade-in;
+  animation-timeline: view();
+  animation-range-start: 10px;
+  animation-range-end: 400px;
+}
+
+.careers-img-container {
+  /* image-container */
+  width: 367px;
+  height: 269px;
+  border: 1px solid #333c4d;
+  /* border-radius: 5px; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  animation-name: fade-in;
+  animation-timeline: view();
+  animation-range-start: 10px;
+  animation-range-end: 400px;
+}
+
+.careers-img-container-right-side {
+  /* image-container */
+  width: 367px;
+  height: 269px;
+  border: 1px solid #333c4d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: right;
+  margin: 0px;
+
+  animation-name: fade-in;
+  animation-timeline: view();
+  animation-range-start: 10px;
+  animation-range-end: 400px;
+}
+
+.title-and-description-of-career {
+  margin-left: 23px;
+  width: 367px;
+  height: 269px;
+
+  animation-name: fade-in;
+  animation-timeline: view();
+  animation-range-start: 10px;
+  animation-range-end: 400px;
+}
+
+.title-and-description-of-career-right-side {
+  margin-left: 23px;
+  width: 367px;
+  height: 269px;
+  text-align: right;
+  margin: 0px 23px 0px 0px;
+
+  animation-name: fade-in;
+  animation-timeline: view();
+  animation-range-start: 10px;
+  animation-range-end: 400px;
+}
+
+.title-and-description-of-career-right-side h4 {
+  margin-top: 0%;
+  font-size: 20px;
+  font-weight: 900;
+
+  animation-name: fade-in;
+  animation-timeline: view();
+  animation-range-start: 10px;
+  animation-range-end: 400px;
+}
+
+.title-and-description-of-career-right-side {
+  font-size: 18px;
+
+  animation-name: fade-in;
+  animation-timeline: view();
+  animation-range-start: 10px;
+  animation-range-end: 400px;
+}
+
+.title-and-description-of-career h4 {
+  margin-top: 0%;
+  font-size: 20px;
+  font-weight: 900;
+
+  animation-name: fade-in;
+  animation-timeline: view();
+  animation-range-start: 10px;
+  animation-range-end: 400px;
+}
+
+.title-and-description-of-career p {
+  font-size: 18px;
+
+  animation-name: fade-in;
+  animation-timeline: view();
+  animation-range-start: 10px;
+  animation-range-end: 400px;
+}
+
+/* section five styling  */
+#section-five-get-started-page {
+  min-height: 580px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* section-five h2 styling */
+#section-five-get-started-page h2 {
+  font-weight: bold;
+  color: #333c4d;
+
+  animation-name: fade-in;
+  animation-timeline: view();
+  animation-range-start: 10px;
+  animation-range-end: 400px;
+}
+
+/* section-five-form */
+#section-five-get-started-page form {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+
+  animation-name: fade-in;
+  animation-timeline: view();
+  animation-range-start: 10px;
+  animation-range-end: 400px;
+}
+/* section-five input box */
+#section-five-get-started-page input {
+  margin-right: 5px;
+  width: 232px;
+  height: 45px;
+  border: 0px;
+  border-radius: 15px;
+  padding: 13px 0px 15px 21px;
+  font-family: "Inter", sans-serif;
+  background-color: #f5f5f5;
+
+  animation-name: fade-in;
+  animation-timeline: view();
+  animation-range-start: 10px;
+  animation-range-end: 400px;
+}
+
+/* placeholder styling */
+#section-five-get-started-page input::placeholder {
+  color: #333c4d;
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+}
+
+/* section-five button */
+#section-five-get-started-page button {
+  transition: background-color 0.3s ease, color 0.3s ease;
+  background-color: white;
+  backface-visibility: 20%;
+  background-color: white;
+  color: #333c4d;
+  cursor: pointer;
+  width: 128px;
+  height: 44px;
+  border: 1px solid #333c4d;
+  border-radius: 15px;
+  padding: 13px 0px 13px 0px;
+  font-family: "Inter", sans-serif;
+
+  animation-name: fade-in;
+  animation-timeline: view();
+  animation-range-start: 10px;
+  animation-range-end: 400px;
+}
+
+#section-five-get-started-page button:hover {
+  background-color: #0aa085;
+  border: 1px solid #0aa085;
+  color: white;
+}
+
+/* fade-in animation */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* responsive design */
+@media only screen and (max-width: 479px) {
+  #nav-header {
+    display: none;
+  }
+  #section-one {
+    max-width: 480px;
+    padding: 0px;
+    margin: 10px;
+  }
+  #section-one h2 {
+    font-size: 25px;
+    text-align: left;
+  }
+}
