@@ -8,10 +8,21 @@
     <link rel="stylesheet" href="{% static 'get_started.css' %}">
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'global_styling.css' %}">
+    <link rel="stylesheet" href="{% static 'responsive_get_started.css' %}">
     <title>Get Started</title>
 </head>
 <!-- {% include 'preloader.html' %} -->
 <body>
+    <header class="container " id="mobile-header">
+        <div class="row">
+            <div class="col-9">
+                <a href="{% url 'get_started' %}">
+                <img src="static/assets/mobile-logo.svg" alt="logo">
+            </a>
+            </div>
+        </div>
+        
+    </header>
     <header id="nav-header" class="container">
         <a href="{% url 'get_started' %}">
             <img src="static/assets/Nav-logo.png" alt="logo">
@@ -25,34 +36,44 @@
     </header>
     <!--this is the first page that the user will see-->
 
-    <section class="container h-75"  id="section-one">
+    <section class="container-lg ps-5"  id="section-one">
         <div class="row">
-            <div class="col-xl-9 col-lg-10 col-md-12 col-sm-10 col-12" >
+            <div class="col-xl-9 col-lg-9 " >
                 <h2>
-                    <span class="change-color">Discover✨</span> Your Dream Career Path: Personalized Recommendations <br> <span class="change-color">Powered by AI🤖</span>
-                </h2>
-                <p>Unsure about what career to pursue? Let our machine learning algorithm analyze your skills,<br> 
+                    <span class="change-color">Discover✨</span> Your Dream Career Path: Personalized Recommendations <span class="change-color">Powered by AI🤖</span>
+                </h2> 
+                <p class="col-10">Unsure about what career to pursue? Let our machine learning algorithm analyze your skills,
                     interests, and preferred industry to suggest perfect matches </p>
                 <form action="#section-two"><button type="submit">How it Works?</button></form>
-            </div>
-            <div class="col-xl-2 justify-content-center ">
+            </div> 
+            <div class="col-xl-2 col-lg-3 justify-content-center ">
                 <img src="{% static 'assets/hero-section.svg' %}" alt="">
             </div>
         </div>
 
     </section>
-    <!-- <section id="section-one">
-        <h2><span class="change-color">Discover✨</span> Your Dream Career Path: <br>
-        Personalized Recommendations <br><span class="change-color">Powered by AI🤖</span></h2>
-        <p>Unsure about what career to pursue? Let our machine learning algorithm analyze your skills, interests, and <br>
-            preferred industry to suggest perfect matches    </p>
-        <form action="#section-two">
-            <button type="submit">How it Works?</button>
-        </form>
-    </section> -->
 
     <!--this section talks about how the app works-->
-    <section id="section-two" class="h-75">
+    <section id="section-two">
+        <h2 class="col-xl-12">How it works?</h2><br>
+        <div id="section-two-description-main-container" class="row">
+            <div class="col-xl-6">
+                <h4>Course, Skills, and Industry Match</h4>
+                <p>Take a quick and engaging assessment that
+                    analyzes your course, skills, interests and your
+                    preferred industry.</p>
+            </div>
+            <div class="col-xl-6">
+                <h4>Our AI algorithm finds your
+                    perfect recommended career path.</h4>
+                <p>Our advanced Multinomial Naive Bayes algorithm
+                   processes your data and matches you with
+                   suitable career paths.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- <section id="section-two" class="h-75">
         <h2>How it works?</h2><br>
         <div id="section-two-description-main-container">
             <div>
@@ -69,11 +90,12 @@
                    suitable career paths.</p>
             </div>
         </div>
-    </section>
+    </section> -->
+
     <!--This section talks about the benefits of the app-->
     <section id="section-three" class="container">
-        <h2>Highlighting Specific Benefits</h2>
-        <div class="row">
+        <h2 class="mx-4">Highlighting Specific Benefits</h2>
+        <div class="row mx-4">
             <div class="col-xl-4 description-box" >
                 <h4>🟩Instant Clarity</h4>
                 <p>Gain valuable insights into your strengths 
@@ -95,17 +117,67 @@
         </div>
         
     </section>
-
+    <hr class="divider" style="height: 5px;">
+    <section class="container" id="section-four">
+        <h2 class="mx-4">Explore Potential Careers</h2>
+        <div class="row">
+            <div class="col-xl-4 d-flex justify-content-xl-between section-four-career p-5">
+                <div>
+                    <img src="{% static 'assets/software-engr-svg.svg' %}" alt="">
+                    <h4>Software Engineer</h4>
+                    <p>Designs, develops, and test software applications and computer systems.</p> 
+                </div>
+            </div>
+            <div class="col-xl-4 d-flex justify-content-xl-between section-four-career p-5">
+                <div>
+                    <img src="{% static 'assets/engr.svg' %}" alt="">
+                    <h4>Civil Engineer</h4>
+                    <p>Responsible for designing, constructing, maintaining,and managing infrastructure projects such as roads, bridges, dams, airports, and buildings. </p>
+                </div>
+            </div>
+            <div class="col-xl-4 d-flex justify-content-xl-between section-four-career p-5">
+                <div>
+                    <img src="{% static 'assets/nurse.svg' %}" alt="">
+                    <h4>Nurse</h4>
+                    <p>Provide healthcare services to patients in various settings, including hospitals, clinics, and homes. </p>
+                </div>
+            </div>
+        </div>
+        <hr class="divider">
+        <div class="row mt-xl-5">
+            <div class="col-xl-4 d-flex justify-content-xl-between section-four-career p-5">
+                <div>
+                    <img src="{% static 'assets/finance.svg' %}" alt="">
+                    <h4>Financial Manager</h4>
+                    <p>Responsible for overseeing the financial health of an organization.</p>
+                </div>
+            </div>
+            <div class="col-xl-4 d-flex justify-content-xl-between section-four-career p-5">
+                <div>
+                    <img src="{% static 'assets/electrician.svg' %}" alt="">
+                    <h4>Electrician</h4>
+                    <p>Skilled tradespeople who install, maintain, and repair electrical systems in residential, commercial, and industrial settings. </p>
+                </div>
+            </div>
+            <div class="col-xl-4 d-flex justify-content-xl-between section-four-career p-5">
+                <div>
+                    <img src="{% static 'assets/educator svg.svg' %}" alt="">
+                    <h4>Educator</h4>
+                    <p>They act as mentors and guides, shaping the individuals who will shape future generations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
     <!--this section will display potential careers that the app may offer-->
-    <section id="section-four-main-container">
+    <!--<section id="section-four-main-container container d-flex justify-content-center">
         <h2>Explore Potential Careers</h2>
-        <!--First career-->
-        <div class="careers-main-container">
-            <div class="careers-and-description-container">
+        
+        <div class="careers-main-container row">
+            <div class="careers-and-description-container col-xl-6">
                 <div class="careers-img-container">
                     <img src="{% static 'assets/software-engr-svg.svg' %}" alt="">
                 </div>
-                <div class="title-and-description-of-career">
+                <div class="title-and-description-of-career col-xl-6">
                     <h4>Software Engineer</h4>
                     <p>Designs, develops, and test software <br>
                        applications and computer systems.</p>
@@ -113,28 +185,27 @@
             </div>
         </div>
         
-        <!--Second career-->
-        <div class="careers-main-container">
-            <div class="careers-and-description-container">
+        <div class="careers-main-container row ">
+            <div class="careers-and-description-container col-xl-6">
                 <div class="title-and-description-of-career-right-side" >
                     <h4>Civil Engineer</h4>
                     <p>Responsible for designing, constructing, maintaining,
                         and managing infrastructure projects such as roads, 
                         bridges, dams, airports, and buildings. </p>
                 </div>
-                <div class="careers-img-container-right-side">
+                <div class="careers-img-container-right-side col-xl-6">
                     <img src="static/assets/engr.svg" alt="">
                 </div>
             </div>
         </div>
         
-        <!--Third Career-->
-        <div class="careers-main-container">
-            <div class="careers-and-description-container">
+
+        <div class="careers-main-container row">
+            <div class="careers-and-description-container col-xl-6">
                 <div class="careers-img-container">
                     <img src="static/assets/nurse.svg" alt="">
                 </div>
-                <div class="title-and-description-of-career">
+                <div class="title-and-description-of-career col-xl-6">
                     <h4>Nurse</h4>
                     <p>Provide healthcare services to patients 
                         in various settings, including hospitals, 
@@ -143,27 +214,25 @@
             </div>
         </div>
         
-        <!--Fourth career-->
-        <div class="careers-main-container">
-            <div class="careers-and-description-container">
+        <div class="careers-main-container row">
+            <div class="careers-and-description-container col-xl-6">
                 <div class="title-and-description-of-career-right-side" >
                     <h4>Financial Manager</h4>
                     <p>Responsible for overseeing the financial 
                         health of an organization.</p>
                 </div>
-                <div class="careers-img-container-right-side">
+                <div class="careers-img-container-right-side col-xl-6">
                     <img src="static/assets/finance.svg" alt="">
                 </div>
             </div>
         </div>
 
-        <!--Fifth Career-->
-        <div class="careers-main-container">
-            <div class="careers-and-description-container">
+        <div class="careers-main-container row">
+            <div class="careers-and-description-container col-xl-6">
                 <div class="careers-img-container">
                     <img src="static/assets/electrician.svg" alt="">
                 </div>
-                <div class="title-and-description-of-career">
+                <div class="title-and-description-of-career col-xl-6">
                     <h4>Electrician</h4>
                     <p>Skilled tradespeople who install, maintain, 
                         and repair electrical systems in residential, 
@@ -172,32 +241,30 @@
             </div>
         </div>
         
-        <!--Sixth career-->
-        <div class="careers-main-container">
-            <div class="careers-and-description-container">
+        <div class="careers-main-container row">
+            <div class="careers-and-description-container col-xl-6">
                 <div class="title-and-description-of-career-right-side" >
                     <h4>Sales Representative</h4>
                     <p>They act as the  face of the company, promoting and selling the company's products or services.</p>
                 </div>
-                <div class="careers-img-container-right-side">
+                <div class="careers-img-container-right-side col-xl-6">
                     <img src="static/assets/sales svg.svg" alt="">
                 </div>
             </div>
-        </div>
+        </div> 
 
-        <!--Seventh Career-->
-        <div class="careers-main-container">
-            <div class="careers-and-description-container" >
+        <div class="careers-main-container row">
+            <div class="careers-and-description-container col-xl-6" >
                 <div class="careers-img-container">
                     <img src="static/assets/educator svg.svg" alt="">
                 </div>
-                <div class="title-and-description-of-career">
+                <div class="title-and-description-of-career col-xl-6">
                     <h4>Educator</h4>
                     <p>They act as mentors and guides, shaping the individuals who will shape future generations.</p>
                 </div>
             </div>
         </div>
-    </section>
+    </section>-->
 
     <section id="section-five-get-started-page" class="h-100">
         <h2>Get started</h2>
