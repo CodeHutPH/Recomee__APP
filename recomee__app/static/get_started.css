@@ -103,20 +103,21 @@ body {
 /* section one get started button */
 #section-one button {
   transition: background-color 0.3s ease, color 0.3s ease;
-  background-color: white;
+  background-color: #0aa085;
   backface-visibility: 20%;
   padding: 12px 68px 12px 68px;
   border-radius: 5px;
-  border: 1px solid #333c4d;
+  border: 1px solid #0aa085;
   font-size: 16px;
   font-family: 'Poppins', sans-serif;
   cursor: pointer;
+  color: white;
 }
 /* section-one (hover effect for get-started btn) */
 #section-one button:hover {
-  background-color: #0aa085;
+  background-color: white;
   border-color: #0aa085;
-  color: white;
+  color: #0aa085;
 }
 
 

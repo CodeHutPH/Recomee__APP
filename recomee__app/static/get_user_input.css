@@ -17,7 +17,7 @@ label {
 }
 
 #section-one {
-    min-height: 800px;
+    height:100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -57,7 +57,7 @@ a:hover{
 
 
 #section-two {
-    min-height: 800px;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -83,7 +83,7 @@ input{
 }
 
 #section-three {
-    min-height: 800px;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -91,7 +91,7 @@ input{
 }
 
 #section-four {
-    min-height: 800px;
+    height:100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -149,4 +149,11 @@ input{
     font-weight: 400;
     text-align: center;
     margin: 10px;
+}
+
+
+@media only screen and (max-width:576px){
+    label{
+        font-size: 38px;
+    }
 }

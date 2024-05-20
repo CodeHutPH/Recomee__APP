@@ -1,11 +1,6 @@
 /* responsive design */
 
 @media only screen and (max-width: 376px) {
-    #mobile-header img {
-        margin-top: 20px;
-        max-width: 40%;
-        margin-left: 0px;
-    }
     
     #nav-header {
         display: none;
@@ -36,8 +31,27 @@
     }
 
   }
-
+  @media only screen and (min-width: 769px){
+    #mobile-header{
+        display: none;
+    }
+  }
 @media only screen and (max-width: 768px){
+    #mobile-header {
+        margin-top: 20px;
+    }
+
+    #mobile-header img{
+        margin-top: 5px;
+        max-width: 100%;
+    }
+    #mobile-nav-links a{
+        text-decoration: none;
+        font-family: 'Poppins', sans-serif;
+        color: #333c4d;
+        font-size: 16px;
+    }
+
     #nav-header {
         display: none;
     }
@@ -50,6 +64,13 @@
         font-size: 32px;
     }
 }@media only screen and (max-width: 576px){
+    #mobile-nav-links a{
+        text-decoration: none;
+        font-family: 'Poppins', sans-serif;
+        color: #333c4d;
+        font-size: 14px;
+    }
+    
     #mobile-header img{
         max-width: 80%;
     }

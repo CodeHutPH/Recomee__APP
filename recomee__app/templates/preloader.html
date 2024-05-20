@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     {% load static %}
     <title>Document</title>
+    <!-- <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}"> -->
     <link rel="stylesheet" href="{% static 'preloader.css' %}" />
+    
   </head>
   <script>
     // JavaScript function to remove preloader
@@ -26,7 +28,7 @@
     });
   </script>
   <body>
-    <div class="pre-loader">
+    <div class="pre-loader container-fluid">
       <div>
         <img
           src="{% static 'assets/[150px] Loader.gif' %}"
