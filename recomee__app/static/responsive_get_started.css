@@ -19,7 +19,6 @@
         font-size: 14px;
         line-height: 20px;
     }
-
     h4 {
         font-size: 14px;
     }
@@ -37,5 +36,65 @@
     }
 
   }
+
+@media only screen and (max-width: 768px){
+    #nav-header {
+        display: none;
+    }
+
+    #section-one img{
+        display: none;
+    }
+
+    #section-one h2{
+        font-size: 32px;
+    }
+}@media only screen and (max-width: 576px){
+    #mobile-header img{
+        max-width: 80%;
+    }
+    
+    #section-one h2{
+        font-size: 18px;
+    }#section-two h2{
+        font-size: 18px;
+    }
+    #section-three h2{
+        font-size: 18px;
+    }
+    #section-four h2{
+        font-size: 18px;
+    }
+    #section-one p {
+        font-size: 14px;
+    }
+    #section-two p {
+        font-size: 14px;
+    }
+    #section-three p {
+        font-size: 14px;
+    }
+    #section-four p {
+        font-size: 14px;
+    }
+
+    #section-two h4 {
+        font-size: 14px;
+    }
+    #section-three h4 {
+        font-size: 14px;
+        margin-top: 14px;
+    }
+
+    #section-four h4 {
+        font-size: 14px;
+        margin-top: 14px;
+    }
+
+    #section-one button {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+}
 
 

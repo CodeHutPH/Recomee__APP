@@ -56,14 +56,6 @@ a:hover{
 }
 
 
-#section-two {
-    min-height: 800px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: #333c4d;
-}
 
 #submit_button:hover {
     transition: background-color 0.3s ease, color 0.3s ease;
