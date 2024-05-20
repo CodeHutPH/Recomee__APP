@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 from pathlib import Path
 import os
+import dj_database_url
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -25,7 +26,7 @@ SECRET_KEY = 'django-insecure-0ot02+$k5%h@a=rwv*@3)bb9$0ew1vphab+ctu&(###zt+6sk3
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.vercel.app','now.sh','127.0.0.1','localhost']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -76,15 +77,13 @@ WSGI_APPLICATION = 'recomee__project.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'railway',
-        'USER': 'postgres',
-        'PASSWORD': 'onYjyILKzuYnNhTBVwtEfiaFRvfUPodu',
-        'HOST': 'roundhouse.proxy.rlwy.net',
-        'PORT': '11347',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
+DATABASES['default'] = dj_database_url.parse("postgres://productiondatabase_ja9v_user:H77oHGKbRMVSWYyWFhntTsStTgVr88BX@dpg-coordeu3e1ms73bd89e0-a.oregon-postgres.render.com/productiondatabase_ja9v")
+# postgres://productiondatabase_ja9v_user:H77oHGKbRMVSWYyWFhntTsStTgVr88BX@dpg-coordeu3e1ms73bd89e0-a.oregon-postgres.render.com/productiondatabase_ja9v
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
