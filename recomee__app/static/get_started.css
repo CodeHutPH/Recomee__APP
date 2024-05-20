@@ -144,18 +144,10 @@ body {
 }
 
 
-#section-two-description-main-container {
-  display: flex;
-  justify-content: center;
-}
-
-#section-two-description-main-container div {
+.section-two-description-box {
   background-color: #f5f5f5;
-  padding: 42px 52px 0px 36px;
-  max-width: 400px;
-  min-height: 223px;
+  padding: 40px 40px;
   border: 1px solid black;
-  margin: 12px;
 
   animation-name: fade-in;
   animation-timeline: view();
