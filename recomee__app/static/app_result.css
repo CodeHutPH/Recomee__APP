@@ -126,16 +126,15 @@ h6 {
   font-size: 14px; 
   font-family: 'Poppins', 
   sans-serif; 
-  color: #333c4d; 
+  color: white; 
   padding: 8px 15px ; 
-  border-radius: 18px; 
-  background-color:white ; 
+  background-color:#0aa085 ; 
   border: 1px solid #333c4d;
 }
 #survey-form a:hover{
-  background-color: #0aa085;
+  background-color: #045345;
   color: white;
-  border-color: #0aa085;
+  border-color: #045345;
 }
 
 /*responsive

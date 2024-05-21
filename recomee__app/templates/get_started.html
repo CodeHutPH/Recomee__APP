@@ -11,7 +11,9 @@
     <link rel="stylesheet" href="{% static 'responsive_get_started.css' %}">
     <title>Get Started</title>
 </head>
-{% include 'preloader.html' %}
+{% if not error %}
+    {% include 'preloader.html' %}
+{% endif %}
 <body>
     <header class="container-md " id="mobile-header">
         <div class="row mx-2 mt-3">
@@ -276,9 +278,15 @@
         <h2>Get started</h2>
         <form method = "post" action = "{% url 'get_started' %}" name="get_started_form">
             {% csrf_token %}
-            <input type="text" name="username" id="get-started-page-input-name" placeholder="Your name" required>
+            <input type="text" name="username" id="get-started-page-input-name" placeholder="username"required>
             <button type="submit">Enter</button>
         </form>
+        {% if error %}
+        <p style="color: red;">{{ error }}</p>
+        <script>
+            document.getElementById('section-five-get-started').focus();
+        </script>
+        {% endif %}
     </section>
 </body>
 

@@ -6,6 +6,10 @@ import uuid
 class Username(models.Model):
     name = models.CharField(max_length=100, null= True)
 
+    def __str__(self):
+        return self.name
+
+
 class InputResults(models.Model):
     user_name = models.ForeignKey(Username, on_delete=models.CASCADE, null=True)
     user_course = models.CharField(max_length=100, null=True)

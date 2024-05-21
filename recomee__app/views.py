@@ -6,12 +6,19 @@ from .models import InputResults, Username
 def get_started(request):
     if request.method == 'POST':
         username = request.POST.get('username')
+        
+        # Check if the username already exists
+        if Username.objects.filter(name=username).exists():
+            # Username already exists, render error message
+            return render(request, 'username_retry.html', {'error': 'Username already taken. Please choose another one.'})
+        
+        # Username does not exist, proceed to save and render the next page
         user_data = Username(name=username)
         user_data.save()
         request.session['username'] = username
         return render(request, 'get_user_input.html')
+    
     return render(request, 'get_started.html')
-
 
 def career_results(request):
     if request.method == 'POST':
