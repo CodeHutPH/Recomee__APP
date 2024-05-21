@@ -97,4 +97,4 @@ def display_data(request):
 
 
 def survey_form(request):
-    return redirect('https://docs.google.com/forms/d/e/1FAIpQLSd9Rt5BK6XiC2NH3VxZv3hrb6vHeBuW44D2mygHAF2gnA9XtA/viewform?edit2=2_ABaOnuchfQX3RbkVHH2whjt9reJzhXnuVr8zCjIR-BHp35yGUQbfuHDpFVs94J9GcQO8IIs')
+    return redirect('https://docs.google.com/forms/d/e/1FAIpQLSd9Rt5BK6XiC2NH3VxZv3hrb6vHeBuW44D2mygHAF2gnA9XtA/viewform')
