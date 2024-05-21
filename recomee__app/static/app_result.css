@@ -121,6 +121,21 @@ h6 {
   margin: 10px;
   justify-content: space-between;
 }
-
+#survey-form a{
+  text-decoration: none; 
+  font-size: 14px; 
+  font-family: 'Poppins', 
+  sans-serif; 
+  color: #333c4d; 
+  padding: 8px 15px ; 
+  border-radius: 18px; 
+  background-color:white ; 
+  border: 1px solid #333c4d;
+}
+#survey-form a:hover{
+  background-color: #0aa085;
+  color: white;
+  border-color: #0aa085;
+}
 
 /*responsive

@@ -76,7 +76,12 @@
         <h4>{{ third_career }} | {{third_probability}}%</h4>
     </div>
 {% endif %}
+<div class="container d-flex justify-content-center " id="survey-form">
+  <a href="{% url 'survey_form' %}" >
+    Answer our survey</a>
+</div>
     </section>
+    
 
     <!-- <p>Look for border colors:</p> -->
     <section id="section-legend" class="container row d-flex justify-content-center">
@@ -89,8 +94,10 @@
           <div class="legend">
             <h6>🟥Alternative Option</h6>
           </div>
+          
         </div>
       </div>
     </section>
+
   </body>
 </html>

@@ -24,39 +24,60 @@
         <label for="">Course</label><br />
         <select name="course" id="courses" required>
           <option value="" selected disabled>Choose an option</option>
-          <option value="Accountancy">Accountancy</option>
-          <option value="Accounting Technology">Accounting Technology</option>
-          <option value="Biology">Biology</option>
-          <option value="Business Administration">
-            Business Administration
-          </option>
-          <option value="Civil Engineering">Civil Engineer</option>
-          <option value="Computer Engineering">Computer Engineering</option>
-          <option value="Computer Science" name="course">
-            Computer Science
-          </option>
-          <option value="Electrical Engineering">Electrical Engineering</option>
-          <option value="Elementary Education">Elementary Education</option>
-          <option value="Hospitality Management">Hospitality Management</option>
-          <option value="Industrial Technology">Industrial Technology</option>
-          <option value="Information Technology">Information Technology</option>
-          <option value="Mechanical Engineering">Mechanical Engineering</option>
-          <option value="Nursing">Nursing</option>
-          <option value="Psychology">Psychology</option>
-          <option value="Secondary Education- English">
-            Secondary Education-English
-          </option>
-          <option value="Secondary Education- Filipino">
-            Secondary Education- Filipino
-          </option>
-          <option value="Secondary Education- Physical Education">
-            Secondary Education- Physical Education
-          </option>
-          <option value="Technical Vocational Teacher Education">
-            Technical Vocational Teacher Education
-          </option>
-          <option value="Tourism Management">Tourism Management</option>
+          
+          <optgroup label="CCIT">
+            <option value="Computer Science" name="course">
+              Computer Science
+            </option>
+            <option value="Information Technology">Information Technology</option>
+          </optgroup>
+
+          <optgroup label="CABA">
+            <option value="Accountancy">Accountancy</option>
+            <option value="Accounting Technology">Accounting Technology</option> 
+            <option value="Business Administration">Business Administration</option> 
+          </optgroup>
+
+          <optgroup label="CAS">
+            <option value="Biology">Biology</option>
+            <option value="Psychology">Psychology</option> 
+          </optgroup>
+
+          <optgroup label="COE">
+            <option value="Civil Engineering">Civil Engineer</option>
+            <option value="Computer Engineering">Computer Engineering</option>
+            <option value="Electrical Engineering">Electrical Engineering</option>
+            <option value="Mechanical Engineering">Mechanical Engineering</option>
+          </optgroup>
+
+          <optgroup label="CTHM">
+            <option value="Hospitality Management">Hospitality Management</option>
+            <option value="Tourism Management">Tourism Management</option>
+          </optgroup>
+
+          <optgroup label="CTE">
+            <option value="Elementary Education">Elementary Education</option>
+            <option value="Secondary Education- English">
+              Secondary Education-English
+            </option>
+            <option value="Secondary Education- Filipino">
+              Secondary Education- Filipino
+            </option>
+            <option value="Secondary Education- Physical Education">
+              Secondary Education- Physical Education
+            </option>
+          </optgroup>
+
+          <optgroup label="CON">
+            <option value="Nursing">Nursing</option>
+          </optgroup>
+
+          <optgroup label="CIT">
+            <option value="Technical Vocational Teacher Education">Technical Vocational Teacher Education</option>
+            <option value="Industrial Technology">Industrial Technology</option>
+          </optgroup>
         </select>
+
         <h6 class="guides" style="color: rgb(31, 31, 31)">
           Specify the course or program you have completed <br />
           or are currently pursuing.

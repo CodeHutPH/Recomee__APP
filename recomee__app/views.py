@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from joblib import load
 from .models import InputResults, Username
 
@@ -94,3 +94,7 @@ def test(request):
 def display_data(request):
     all_results = InputResults.objects.all()
     return render(request, 'history_page.html', {'all_results': all_results})
+
+
+def survey_form(request):
+    return redirect('https://docs.google.com/forms/d/e/1FAIpQLSd9Rt5BK6XiC2NH3VxZv3hrb6vHeBuW44D2mygHAF2gnA9XtA/viewform?edit2=2_ABaOnuchfQX3RbkVHH2whjt9reJzhXnuVr8zCjIR-BHp35yGUQbfuHDpFVs94J9GcQO8IIs')
