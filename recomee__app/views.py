@@ -28,7 +28,7 @@ def career_results(request):
         user_industry = request.POST.get('industry')
 
         # Combine user input into a single string
-        user_input_combined = ' '.join([user_course, user_skills, user_interest, user_industry])
+        user_input_combined = ' '.join([user_skills, user_interest, user_industry])
 
         # Load the model and vectorizer
         vectorizer = load('recomee__app/models/ml_vectorizer.joblib')
@@ -58,26 +58,41 @@ def career_results(request):
         first_probability = int(top_three_probabilities[0] * 100)
         second_probability = int(top_three_probabilities[1] * 100)
         third_probability = int(top_three_probabilities[2] * 100)
-
-        username = request.session.get('username')
-        user_data = Username.objects.get(name=username)
-        prediction_result = InputResults.objects.create(
-            user_name=user_data,
-            user_course=user_course,
-            user_industry=user_industry,
-            user_skills=user_skills,
-            user_interest=user_interest,
-            career_one=top_three_predictions[0],
-            career_two=top_three_predictions[1],
-            career_three=top_three_predictions[2],
-            career_one_prob=first_probability,  
-            career_two_prob=second_probability,  
-            career_three_prob=third_probability)             
-        
-        prediction_result.save()
-    
-        if top_three_probabilities[0] < 0.03:
+        if top_three_probabilities[0] > 0.3 :
+            username = request.session.get('username')
+            user_data = Username.objects.get(name=username)
+            prediction_result = InputResults.objects.create(
+                user_name=user_data,
+                user_course=user_course,
+                user_industry=user_industry,
+                user_skills=user_skills,
+                user_interest=user_interest,
+                career_one=top_three_predictions[0],
+                career_two=top_three_predictions[1],
+                career_three=top_three_predictions[2],
+                career_one_prob=first_probability,  
+                career_two_prob=second_probability,  
+                career_three_prob=third_probability)             
+            prediction_result.save()
+        else:  
             return render(request, 'no_results.html')
+    
+        # username = request.session.get('username')
+        # user_data = Username.objects.get(name=username)
+        # prediction_result = InputResults.objects.create(
+        #     user_name=user_data,
+        #     user_course=user_course,
+        #     user_industry=user_industry,
+        #     user_skills=user_skills,
+        #     user_interest=user_interest,
+        #     career_one=top_three_predictions[0],
+        #     career_two=top_three_predictions[1],
+        #     career_three=top_three_predictions[2],
+        #     career_one_prob=first_probability,  
+        #     career_two_prob=second_probability,  
+        #     career_three_prob=third_probability)             
+        # prediction_result.save()
+
         
         context = {
             'first_probability': int(top_three_probabilities[0] * 100),

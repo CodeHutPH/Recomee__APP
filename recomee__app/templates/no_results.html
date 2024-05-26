@@ -14,11 +14,6 @@
       <a href= "{% url 'get_started' %}">
           <img src="{% static 'assets/whitelogo.png' %}" alt="logo">
       </a>
-      <nav id="nav-links">
-        <form method = 'post' action= "{% url 'get_started' %}" name="get_started_form">
-          {% csrf_token %}
-          <button id="call-to-action" title="Go back to previous page" type="submit">Back</a>
-      </nav>
   </header>
     <section class="section-one">
       <div class="center-container">
