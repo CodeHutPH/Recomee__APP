@@ -32,61 +32,27 @@
     <section id="results-section" class="container">
       <h1>Top 3 Personalized Career Matches</h1>
       <div class="results_container">
-{% if first_probability > 25 %}
     <div class="results results-green row" >
         <h4>{{ first_career }} | {{first_probability}}%</h4>
     </div>
-{% elif first_probability > 14 and first_probability < 25 %}
     <div class="results results-gold row" >
-        <h4>{{ first_career }} | {{first_probability}}%</h4>
+        <h4>{{ second_career }} | {{second_probability}}%</h4>
     </div>
-{% else %}
     <div class="results results-red row" >
-        <h4>{{ first_career }} | {{ first_probability }}%</h4>
-    </div>
-{% endif %}
-
-{% if second_probability > 25 %}
-    <div class="results results-green" >
-        <h4>{{ second_career }} | {{second_probability}}%  </h4>
-    </div>
-{% elif second_probability > 14 and first_probability < 25 %}
-    <div class="results results-gold">
-        <h4>{{ second_career }} | {{second_probability}}% </h4>
-    </div>
-{% else %}
-    <div class="results results-red">
-        <h4>{{ second_career }} | {{second_probability}}% </h4>
-    </div>
-{% endif %}
-
-{% if third_probability > 25 %}
-    <div class="results results-green">
-      <!-- <h4>{{third_probability}}</h4> -->
-        <h4>{{ third_career }} | {{third_probability}}%</h4>
-    </div>
-{% elif third_probability > 14 and first_probability < 25 %}
-    <div class="results results-gold">
-      <!-- <h4>{{third_probability}}</h4> -->
-        <h4>{{ third_career }} | {{third_probability}}%</h4>
-    </div>
-{% else %}
-    <div class="results results-red">
-      <!-- <h4>{{third_probability}}</h4> -->
-        <h4>{{ third_career }} | {{third_probability}}%</h4>
+        <h4>{{ third_career }} | {{ third_probability }}%</h4>
     </div>
 {% endif %}
     </section>
     <!-- <p>Look for border colors:</p> -->
     <section id="section-legend" class="container row d-flex justify-content-center">
           <div class="legend">
-            <h6>🟩Highly Recommended</h6>
+            <h6>🟩Top 1</h6>
           </div>
           <div class="legend">
-            <h6>🟨Recommended</h6>
+            <h6>🟨Top 2</h6>
           </div>
           <div class="legend">
-            <h6>🟥Alternative Option</h6>
+            <h6>🟥Top 3</h6>
           </div>
           
         </div>
