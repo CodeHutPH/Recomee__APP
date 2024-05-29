@@ -1,25 +1,48 @@
 from django.shortcuts import render, redirect
 from joblib import load
-from .models import InputResults, Username
+from .models import InputResults
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
+from django.shortcuts import render, redirect
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User
+from .forms import CustomUserCreationForm
+
+
 
 
 def get_started(request):
-    if request.method == 'POST':
-        username = request.POST.get('username')
-        
-        # Check if the username already exists
-        if Username.objects.filter(name=username).exists():
-            # Username already exists, render error message
-            return render(request, 'username_retry.html', {'error': 'Username already taken. Please choose another one.'})
-        
-        # Username does not exist, proceed to save and render the next page
-        user_data = Username(name=username)
-        user_data.save()
-        request.session['username'] = username
-        return render(request, 'get_user_input.html')
-    
     return render(request, 'get_started.html')
 
+def user_registration(request):
+    if request.method == 'POST':
+        form = CustomUserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('get_started')  # Redirect to 'get_started' after successful registration
+    else:
+        form = CustomUserCreationForm()
+    return render(request, 'registration.html', {'form': form})
+
+def user_login(request):
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            login(request, user)
+            return render(request, 'dashboard.html')  # Redirect to 'get_user_input' after successful login
+        else:
+            return render(request, 'login.html', {'error': 'Invalid username or password'})
+    else: 
+        return render(request, 'login.html')
+
+def user_logout(request):
+    logout(request)
+    return render(request, 'get_started.html')
+
+@login_required
 def career_results(request):
     if request.method == 'POST':
         user_course = request.POST.get('course')
@@ -51,49 +74,31 @@ def career_results(request):
         top_one = {'first_career' : top_three_predictions[0].upper(), 'first_probability': '{:.2f}'.format(top_three_probabilities[0] * 100)}
         top_two = {'second_career' : top_three_predictions[1].upper(), 'second_probability' : '{:.2f}'.format(top_three_probabilities[1] * 100)}
         top_three = {'third_career' : top_three_predictions[2].upper(), 'third_probability' : '{:.2f}'.format(top_three_probabilities[2] * 100)}
-        # top_four = {'fourth_career' : top_three_predictions[3].upper(), 'fourth_probability' : '{:.2f}'.format(top_three_probabilities[3] * 100)}
-        # username = request.session.get('username')
+
         combined_results = {**top_one, **top_two, **top_three,}
 
         first_probability = int(top_three_probabilities[0] * 100)
         second_probability = int(top_three_probabilities[1] * 100)
         third_probability = int(top_three_probabilities[2] * 100)
-        if top_three_probabilities[0] > 0.3 :
-            username = request.session.get('username')
-            user_data = Username.objects.get(name=username)
-            prediction_result = InputResults.objects.create(
-                user_name=user_data,
-                user_course=user_course,
-                user_industry=user_industry,
-                user_skills=user_skills,
-                user_interest=user_interest,
-                career_one=top_three_predictions[0],
-                career_two=top_three_predictions[1],
-                career_three=top_three_predictions[2],
-                career_one_prob=first_probability,  
-                career_two_prob=second_probability,  
-                career_three_prob=third_probability)             
-            prediction_result.save()
-        else:  
-            return render(request, 'no_results.html')
-    
-        # username = request.session.get('username')
-        # user_data = Username.objects.get(name=username)
-        # prediction_result = InputResults.objects.create(
-        #     user_name=user_data,
-        #     user_course=user_course,
-        #     user_industry=user_industry,
-        #     user_skills=user_skills,
-        #     user_interest=user_interest,
-        #     career_one=top_three_predictions[0],
-        #     career_two=top_three_predictions[1],
-        #     career_three=top_three_predictions[2],
-        #     career_one_prob=first_probability,  
-        #     career_two_prob=second_probability,  
-        #     career_three_prob=third_probability)             
-        # prediction_result.save()
 
-        
+        # Get the logged-in user
+        user_instance = request.user
+
+        # Save history entry associated with the logged-in user
+        InputResults.objects.create(
+            user=user_instance,
+            user_course=user_course,
+            user_industry=user_industry,
+            user_skills=user_skills,
+            user_interest=user_interest,
+            career_one=top_three_predictions[0],
+            career_two=top_three_predictions[1],
+            career_three=top_three_predictions[2],
+            career_one_prob=int(top_three_probabilities[0] * 100),
+            career_two_prob=int(top_three_probabilities[1] * 100),
+            career_three_prob=int(top_three_probabilities[2] * 100)
+        )
+
         context = {
             'first_probability': int(top_three_probabilities[0] * 100),
             'second_probability': int(top_three_probabilities[1] * 100),
@@ -101,22 +106,14 @@ def career_results(request):
         }
 
         return render(request,'app_result.html', {
-        **combined_results,
-        **context,
-        'top_three_predictions': top_three_predictions,
-        'top_three_probabilities': top_three_probabilities, 
+            **combined_results,
+            **context,
+            'top_three_predictions': top_three_predictions,
+            'top_three_probabilities': top_three_probabilities, 
         })
     return render(request, 'get_user_input.html')
 
-
-def test(request):
-    return render(request, "index.html")
-
-
+@login_required
 def display_data(request):
-    all_results = InputResults.objects.all()
-    return render(request, 'history_page.html', {'all_results': all_results})
-
-
-def survey_form(request):
-    return redirect('https://docs.google.com/forms/d/e/1FAIpQLSd9Rt5BK6XiC2NH3VxZv3hrb6vHeBuW44D2mygHAF2gnA9XtA/viewform')
+    user_results = InputResults.objects.filter(user=request.user)
+    return render(request, 'history_page.html', {'user_results': user_results})

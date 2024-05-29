@@ -14,9 +14,8 @@
     <button id="back_btn" title="Go back to previous page">Back</button>
     <section class="container my-3">
       <h4>History</h4>
-      {% for user_result in all_results reversed %}
+      {% for user_result in user_results reversed %}
       <div class="container history-container my-4" >
-        <span class="user_pill mb-5">User: {{user_result.user_name.name}}</span>
         <div class="row">
           <div class="col-xl-6">
             <p class="my-3"><strong>Course</strong> : {{user_result.user_course}}</p>

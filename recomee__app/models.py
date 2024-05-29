@@ -1,17 +1,12 @@
 from django.db import models
+from django.contrib.auth.models import User
 import uuid
 
 # Create your models here.
 
-class Username(models.Model):
-    name = models.CharField(max_length=100, null= True)
-
-    def __str__(self):
-        return self.name
-
 
 class InputResults(models.Model):
-    user_name = models.ForeignKey(Username, on_delete=models.CASCADE, null=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     user_course = models.CharField(max_length=100, null=True)
     user_industry = models.CharField(max_length=100, null=True)
     user_skills = models.CharField(max_length=100, null=True)

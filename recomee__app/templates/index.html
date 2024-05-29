@@ -1,22 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  {% load static %}
-  <title>Document</title>
-  <link rel="stylesheet" href="{% static 'bootsrap.min.css' %}">
+    <title>Register</title>
 </head>
 <body>
-  <div class="row">
-    <div class="col-12">
-        <div class="col-1">
-          <p>Hey</p>
-        </div>
-        <div class="col-11">
-          <p>Fritz</p>
-        </div>
-    </div>
-  </div>
+    <h1>Register</h1>
+    <div class="container">
+      <div class="row">
+        <form action="" method="POST">
+          {% csrf_token %}
+          <span>{{form.name}}</span><br>
+          <span> {{form.password}}</span><br>
+          <span>{{form.confirm_password}}</span><br>
+          {% if form.errors %}
+          <div style="color: red;">
+                  {% for error in form.non_field_errors %}
+                     <span>{{ error }}</span>
+                  {% endfor %}
+          </div>
+          {% endif %}
+          <button type="submit">Register</button>
+        </form>
+        
 </body>
 </html>
