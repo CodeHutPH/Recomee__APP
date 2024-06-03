@@ -20,12 +20,13 @@
     
     <!-- {% include 'confetti.html' %} -->
     <header id="nav-header" class="container">
-      <a href="{% url 'get_started' %}">
+      <a href="{% url 'user_dashboard' %}">
         <img src="{% static 'assets/logo.png' %}" alt="logo" />
       </a>
       <nav id="nav-links">
         <a href="{% url 'display_data' %}">History</a>
         <a href="{% url 'career_results' %}" id="call-to-action">Go Back</a>
+        <a href="{% url 'user_logout' %}">Logout</a>
       </nav>
     </header>
 

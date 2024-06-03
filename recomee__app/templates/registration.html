@@ -23,10 +23,41 @@
                 <form action="" method="POST" >
                     <h3>Create an Account</h3>
                     {% csrf_token %}
-                    {{ form.as_p}}
-                    <button type="submit">Register</button>
+                    <div>{{form.username}}</div>
+                    <div>
+                        {{form.password1}}
+                        <input type="checkbox" class="checkboxes" onclick="togglePassword('id_password1')"> Show
+                    </div>
+                    <div>
+                        {{form.password2}}
+                        <input type="checkbox" class="checkboxes" onclick="togglePassword('id_password2')"> Show</div>
+                        {% if form.errors %}
+                    <div class="alert alert-danger">
+                        <ul>
+                        {% for field, errors in form.errors.items %}
+                            {% for error in errors %}
+                                <li>{{ error }}</li>
+                            {% endfor %}
+                        {% endfor %}
+                        </ul>
+                    </div>
+                        {% endif %}
+                    <div class="text-end">
+                        <button type="submit">Register</button>
+                    </div>
                     <p class="text-center">Have already an account? <a href="{% url 'user_login' %}">Login here</a></p>
                 </form>
     </div>
+
+    <script>
+        function togglePassword(fieldId) {
+            var field = document.getElementById(fieldId);
+            if (field.type === "password") {
+                field.type = "text";
+            } else {
+                field.type = "password";
+            }
+        }
+    </script>
 </body>
 </html>

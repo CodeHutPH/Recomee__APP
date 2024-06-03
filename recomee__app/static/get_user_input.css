@@ -15,17 +15,7 @@ label {
     font-weight: 700;
     color: #333c4d;
 }
-#nav-links a {
-    text-decoration: none;
-    font-family: "Poppins", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    margin: 20px;
-    font-style: normal;
-    font-size: 14px;
-    color: #333c4d;
-    padding: 5px;
-  }
+
 #section-one {
     height:100vh;
     display: flex;

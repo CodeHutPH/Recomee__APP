@@ -35,6 +35,11 @@ body {
   transition: 3s;
   animation: fade-in 5s ease-in;
 }
+
+#nav-header::after {
+  width: 100px;
+  height: 2px;
+}
 /* navigation bar logo  */
 #nav-header img {
   max-width: 141px;

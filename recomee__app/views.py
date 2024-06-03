@@ -28,11 +28,12 @@ def user_login(request):
     if request.method == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')
-        
+
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
-            return render(request, 'dashboard.html')  # Redirect to 'get_user_input' after successful login
+            request.session['username'] = username
+            return redirect('user_dashboard')  # Redirect to 'get_user_input' after successful login
         else:
             return render(request, 'login.html', {'error': 'Invalid username or password'})
     else: 
@@ -115,5 +116,14 @@ def career_results(request):
 
 @login_required
 def display_data(request):
-    user_results = InputResults.objects.filter(user=request.user)
-    return render(request, 'history_page.html', {'user_results': user_results})
+    username = request.session.get('username')
+    user_results = None
+    if username:
+        user_results = InputResults.objects.filter(user=request.user)
+    return render(request, 'history_page.html', {'user_results': user_results, 'username': username})
+
+
+def user_dashboard(request):
+    username = request.session.get('username')
+    if username:
+        return render (request, 'dashboard.html', {'username':username})

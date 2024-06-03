@@ -11,19 +11,24 @@
     <link rel="stylesheet" href="{% static 'responsive_get_started.css' %}">
     <title>Get Started</title>
 </head>
+
+{% csrf_token %}
 {% if not error %}
     {% include 'preloader.html' %}
 {% endif %}
 <body>
     <header class="container-md " id="mobile-header">
         <div class="row mx-2 mt-3">
-            <div class="col-9">
+            <div class="col-6">
                 <a href="{% url 'get_started' %}">
-                <img src="static/assets/mobile-logo.svg" alt="logo">
+                <img src="{% static 'assets/responsive-mobile-logo.svg' %}" alt="logo">
             </a>
             </div>
             <div class="col-3 text end" id="mobile-nav-links">
-                <a href="{% url 'user_logout'%}">Logout</a>
+                <a href="{% url 'user_logout' %}">Logout</a>
+            </div>
+            <div class="col-3 text end" id="mobile-nav-links">
+                <a href="{% url 'display_data' %}">History</a>
             </div>
         </div>
         
@@ -36,6 +41,7 @@
             <a href="#section-two" title="see how the app works">How it Works</a>
             <a href="#section-three" title="what are the benefits">Benefits</a>
             <a href="#section-four">Explore Careers</a>
+            <a href="{% url 'display_data' %}">History</a>
             <a href="{% url 'user_logout' %}"><button id="call-to-action" title="Click Here to get started!">Logout </button></a>
         </nav>
     </header>
@@ -45,9 +51,9 @@
         <div class="row mx-3">
             <div class="col-xl-9 col-lg-9 " >
                 <h2>
-                    <span class="change-color">Discover✨</span> Your Dream Career Path: Personalized Recommendations <span class="change-color">Powered by AI🤖</span>
+                    <span>Welcome! </span> <span class="change-color">{{username}}</span>
                 </h2> 
-                <p class="col-10">Unsure about what career to pursue? Let our machine learning algorithm analyze your skills,
+                <p class="col-12">Unsure about what career to pursue? Let our machine learning algorithm analyze your skills,
                     interests, and preferred industry to suggest perfect matches </p>
                 <form action="{% url 'career_results' %}"><button type="submit">Let's Start!</button></form>
                     

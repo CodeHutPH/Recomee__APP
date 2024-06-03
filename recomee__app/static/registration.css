@@ -32,8 +32,14 @@ form{
 form p {
     font-size: 12px;
     font-family: 'Poppins', sans-serif;
+    
 }
 
+form div {
+    font-family: 'Poppins', sans serif;
+    font-size: 12px;
+    margin-bottom: 15px;
+}
 .user-input{
     border: 1px solid #dbdbdb;
     min-width: 500px;
@@ -56,8 +62,8 @@ form p {
 }
 button {
     border-radius: 5px;
-    margin: 12px;
-    margin-left: 0;
+    margin-bottom: 15px;
+    margin-right: 52px;
     font-size: 12px;
     border: none;
     background-color:#0AA085;
@@ -75,24 +81,33 @@ button:hover {
 @media only screen and (max-width:768px){
     .user-input{
         border: 1px solid #dbdbdb;
-        min-width: 300px;
+        min-width: 350px;
         font-size: 12px;
         padding: 10px;
     }
     
     .password-input{
         border: 1px solid #dbdbdb;
-        min-width: 300px;
+        min-width: 350px;
         font-size: 12px;
         padding: 10px;
     }
     
     .confirm-password{
         border: 1px solid #dbdbdb;
-        min-width: 300px;
+        min-width: 350px;
         font-size: 12px;
         padding: 10px;
     }
+
+    .checkboxes {
+        margin-top: 15px;
+    }
+
+    button {
+        margin-right:0;
+    }
+
 }
 
 @media only screen and (max-width:376px){
@@ -105,22 +120,31 @@ button:hover {
     }
     .user-input{
         border: 1px solid #dbdbdb;
-        min-width: 200px;
+        min-width: 250px;
         font-size: 12px;
         padding: 10px;
     }
     
     .password-input{
         border: 1px solid #dbdbdb;
-        min-width: 200px;
+        min-width: 250px;
         font-size: 12px;
         padding: 10px;
     }
     
     .confirm-password{
         border: 1px solid #dbdbdb;
-        min-width: 200px;
+        min-width: 250px;
         font-size: 12px;
         padding: 10px;
     }
+
+    .checkboxes {
+        margin-top: 15px;
+    }
+
+    button {
+        margin-right:0;
+    }
+
 }
