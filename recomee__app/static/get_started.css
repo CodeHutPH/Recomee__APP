@@ -36,10 +36,7 @@ body {
   animation: fade-in 5s ease-in;
 }
 
-#nav-header::after {
-  width: 100px;
-  height: 2px;
-}
+
 /* navigation bar logo  */
 #nav-header img {
   max-width: 141px;
@@ -81,7 +78,7 @@ body {
   padding: 5px 12px;
   font-weight: 600;
   border: 1px solid #0aa085;
-  border-radius: 5px;
+  border-radius: 30px;
   background-color: #0aa085;
   cursor: pointer;
 }
@@ -106,12 +103,12 @@ body {
 
 
 /* section one get started button */
-#section-one button {
+#primary-button {
   transition: background-color 0.3s ease, color 0.3s ease;
   background-color: #0aa085;
   backface-visibility: 20%;
-  padding: 12px 68px 12px 68px;
-  border-radius: 5px;
+  padding: 12px 28px 12px 28px;
+  border-radius: 30px;
   border: 1px solid #0aa085;
   font-size: 16px;
   font-family: 'Poppins', sans-serif;
@@ -119,12 +116,30 @@ body {
   color: white;
 }
 /* section-one (hover effect for get-started btn) */
-#section-one button:hover {
+#primary-button:hover {
   background-color: white;
   border-color: #0aa085;
   color: #0aa085;
 }
 
+#secondary-button {
+  transition: background-color 0.3s ease, color 0.3s ease;
+  background-color: white;
+  backface-visibility: 20%;
+  padding: 12px 28px 12px 28px;
+  border-radius: 30px;
+  border: 1px solid #0aa085;
+  font-size: 16px;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  color: #0aa085;
+}
+
+#secondary-button:hover {
+  background-color: #0aa085;
+  border-color: #0aa085;
+  color: white;
+}
 
 #section-two {
   background-color: #f5f5f5;

@@ -13,12 +13,12 @@
   <body>
     <button id="back_btn" title="Go back to previous page">Back</button>
     <section class="container my-3">
-      <h4>History</h4>
+      <h2>Hi, <span class="user-pill">{{username}}</span>. </h2>
+      <p>listed below are your history.</p>
       {% for user_result in user_results reversed %}
       <div class="container history-container my-4" >
         <div class="row">
           <div class="col-xl-6">
-            <span class="user-pill">User: {{username}}</span>
             <p class="my-3"><strong>Course</strong> : {{user_result.user_course}}</p>
             <p><strong>Skills</strong> : {{user_result.user_skills}}</p>
             <p><strong>Interest</strong> : {{user_result.user_interest}}</p>

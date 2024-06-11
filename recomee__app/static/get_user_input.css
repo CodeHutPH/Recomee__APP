@@ -15,7 +15,10 @@ label {
     font-weight: 700;
     color: #333c4d;
 }
-
+p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+}
 #section-one {
     height:100vh;
     display: flex;

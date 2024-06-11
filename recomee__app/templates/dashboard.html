@@ -25,10 +25,10 @@
             </a>
             </div>
             <div class="col-3 text end" id="mobile-nav-links">
-                <a href="{% url 'user_logout' %}">Logout</a>
+                <a href="{% url 'user_logout' %}" style="color: white; border-radius: 30px; padding: 5px 10px;">Logout</a>
             </div>
             <div class="col-3 text end" id="mobile-nav-links">
-                <a href="{% url 'display_data' %}">History</a>
+                <a href="{% url 'display_data' %}" style="color: white; border-radius: 30px; padding: 5px 10px;">History</a>
             </div>
         </div>
         
@@ -41,8 +41,8 @@
             <a href="#section-two" title="see how the app works">How it Works</a>
             <a href="#section-three" title="what are the benefits">Benefits</a>
             <a href="#section-four">Explore Careers</a>
-            <a href="{% url 'display_data' %}">History</a>
-            <a href="{% url 'user_logout' %}"><button id="call-to-action" title="Click Here to get started!">Logout </button></a>
+            <a href="{% url 'display_data' %}" >History</a>
+            <a href="{% url 'user_logout' %}"><button id="call-to-action" >Logout </button></a>
         </nav>
     </header>
     <!--this is the first page that the user will see-->
@@ -55,7 +55,7 @@
                 </h2> 
                 <p class="col-12">Unsure about what career to pursue? Let our machine learning algorithm analyze your skills,
                     interests, and preferred industry to suggest perfect matches </p>
-                <form action="{% url 'career_results' %}"><button type="submit">Let's Start!</button></form>
+                <form action="{% url 'career_results' %}"><button type="submit" id="primary-button">Let's Start!</button></form>
                     
             </div> 
             <div class="col-xl-2 col-lg-3 justify-content-center ">

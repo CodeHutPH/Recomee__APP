@@ -1,7 +1,13 @@
 /* responsive design */
-
+@media only screen and (min-width: 376px) {
+    #mobile-header a{
+        color: white;
+    }
+}
 @media only screen and (max-width: 376px) {
-    
+    #mobile-header a{
+        color: white;
+    }
     #nav-header {
         display: none;
     }
@@ -48,8 +54,10 @@
     #mobile-nav-links a{
         text-decoration: none;
         font-family: 'Poppins', sans-serif;
-        color: #333c4d;
+        color: white;
         font-size: 16px;
+        padding: 5px;
+        background-color: #0aa085;
     }
 
     #nav-header {
