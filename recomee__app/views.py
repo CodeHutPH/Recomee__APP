@@ -41,7 +41,7 @@ def user_login(request):
 
 def user_logout(request):
     logout(request)
-    return render(request, 'get_started.html')
+    return redirect('get_started')
 
 @login_required
 def career_results(request):
