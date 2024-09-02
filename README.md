@@ -1,4 +1,6 @@
-# RECOMEE: A Naïve Bayes algorithm-enabled application for optimizing career selection with smart recommendations for President Ramon Magsaysay State University
+# RECOMEE
+
+### A Naïve Bayes Algorithm-enabled Application for Optimizing Career Selection with Smart Recommendations for President Ramon Magsaysay State University.
 
 ![alt text](recomee-banner.png)
 
